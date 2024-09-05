@@ -22,6 +22,16 @@ struct Matrix submatrix(const struct Matrix matrix, int *rows, int n)
     return new_matrix;
 }
 
+void print(struct Matrix matrix)
+{
+    for (int i = 0; i < matrix.n; ++i) {
+        for (int j = 0; j < matrix.n; ++j) {
+            printf("%lf ", matrix.data[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 double det(const struct Matrix matrix)
 {
     if (matrix.n == 1)
@@ -56,6 +66,8 @@ double det(const struct Matrix matrix)
         struct Matrix subm = submatrix(matrix, rows, matrix.n - 1);
         free(rows);
 
+        print(subm);
+
         result += coeff * matrix.data[0][i] * det(subm);
         coeff *= -1;
     }
@@ -63,15 +75,7 @@ double det(const struct Matrix matrix)
     return result;
 }
 
-void print(struct Matrix matrix)
-{
-    for (int i = 0; i < matrix.n; ++i) {
-        for (int j = 0; j < matrix.n; ++j) {
-            printf("%lf ", matrix.data[i][j]);
-        }
-        printf("\n");
-    }
-}
+
 
 int main()
 {
