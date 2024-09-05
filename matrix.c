@@ -1,6 +1,7 @@
 #include "matrix.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Matrix to_matrix(double *matrix, int n)
 {
@@ -26,24 +27,31 @@ struct Matrix submatrix(const struct Matrix matrix, int *rows, int n)
 
 double det(const struct Matrix matrix)
 {
-    if (matrix.n == 1) {
+    if (matrix.n == 1)
+    {
         return matrix.data[0][0];
     }
 
     int coeff = 1;
     double result = 0;
 
-    for (int i = 0; i < matrix.n; ++i) {
-        int *rows = (int *) malloc(sizeof(int) * (matrix.n - 1));
-        if (!rows) {
+    for (int i = 0; i < matrix.n; ++i)
+    {
+        int *rows = (int *)malloc(sizeof(int) * (matrix.n - 1));
+        if (!rows)
+        {
             fprintf(stderr, "bed alloc\n");
             exit(1);
         }
 
-        for (int j = 0; j < matrix.n; ++j) {
-            if (i > j) {
+        for (int j = 0; j < matrix.n; ++j)
+        {
+            if (i > j)
+            {
                 rows[j] = j;
-            } else if (i < j) {
+            }
+            else if (i < j)
+            {
                 rows[j - 1] = j;
             }
         }
@@ -54,4 +62,29 @@ double det(const struct Matrix matrix)
         result += coeff * matrix.data[0][i] * det(subm);
         coeff *= -1;
     }
+
+    return result;
+}
+
+void print(struct Matrix matrix)
+{
+    for (int i = 0; i < matrix.n; ++i) {
+        for (int j = 0; j < matrix.n; ++j) {
+            printf("%lf ", matrix.data[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    double m[9] = {3, 5, 1,
+                   1, 4, 2,
+                   7, 1, 9};
+    printf("i am here\n");
+    struct Matrix mat = to_matrix(m, 3);
+    print(mat);
+    //printf("det = %lf", det(mat));
+
+    return 0;
 }
