@@ -84,7 +84,7 @@ int main()
 
     to_matrix(&mat, m);
     print(mat);
-    //printf("det = %lf", det(mat));
+    printf("det = %lf", det(mat));
 
     return 0;
 }
