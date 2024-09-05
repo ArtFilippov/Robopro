@@ -67,19 +67,3 @@ double det(const struct Matrix matrix)
 
     return result;
 }
-
-
-
-int main()
-{
-    double m[9] = {3, 5, 1,
-                   1, 4, 2,
-                   7, 1, 9};
-    struct Matrix mat = {.n = 3};
-    mat.data = malloc(sizeof(double*) * mat.n);
-
-    to_matrix(&mat, m);
-    printf("det = %lf", det(mat));
-
-    return 0;
-}
