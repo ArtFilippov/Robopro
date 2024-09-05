@@ -3,12 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Matrix to_matrix(double *matrix, int n)
+void to_matrix(struct Matrix new_matrix, double *matrix)
 {
-    struct Matrix new_matrix = {.n = n};
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < new_matrix.n; ++i)
     {
-        new_matrix.data[i] = matrix + i * n;
+        new_matrix.data[i] = matrix + i * new_matrix.n;
     }
 
     return new_matrix;
@@ -82,7 +81,10 @@ int main()
                    1, 4, 2,
                    7, 1, 9};
     printf("i am here\n");
-    struct Matrix mat = to_matrix(m, 3);
+    struct Matrix mat = {.n = 3};
+    mat.data = malloc(sizeof(double*) * mat.n);
+
+    to_matrix(mat, m);
     print(mat);
     //printf("det = %lf", det(mat));
 
