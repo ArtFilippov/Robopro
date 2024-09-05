@@ -8,4 +8,4 @@ void to_matrix(struct Matrix *new_matrix, double *matrix);
 
 double det(const struct Matrix matrix);
 
-struct Matrix submatrix(const struct Matrix matrix, int *rows, int n);
+void submatrix(struct Matrix *new_matrix, struct Matrix matrix, int *rows);

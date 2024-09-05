@@ -11,25 +11,11 @@ void to_matrix(struct Matrix *new_matrix, double *matrix)
     }
 }
 
-struct Matrix submatrix(const struct Matrix matrix, int *rows, int n)
+void submatrix(struct Matrix *new_matrix, struct Matrix matrix, int *rows)
 {
-    struct Matrix new_matrix = {.n = n};
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < new_matrix->n; ++i)
     {
-        new_matrix.data[i] = matrix.data[rows[i]] + (matrix.n - n);
-    }
-
-    return new_matrix;
-}
-
-void print(struct Matrix matrix)
-{
-    printf("%d\n", matrix.n);
-    for (int i = 0; i < matrix.n; ++i) {
-        for (int j = 0; j < matrix.n; ++j) {
-            printf("%lf ", matrix.data[i][j]);
-        }
-        printf("\n");
+        new_matrix->data[i] = matrix.data[rows[i]] + (matrix.n - new_matrix->n);
     }
 }
 
@@ -63,17 +49,19 @@ double det(const struct Matrix matrix)
                 rows[j - 1] = j;
             }
         }
-                
-        for (int k = 0; k < matrix.n - 1; ++k) {
-            printf("%d ", rows[k]);
-        }
-        struct Matrix subm = submatrix(matrix, rows, matrix.n - 1);
 
+        struct Matrix subm;
+        subm.n = matrix.n - 1;
+        subm.data = (double **) malloc(sizeof(double **) * subm.n);
+        
+        submatrix(&subm, matrix, rows);
         free(rows);
 
-        print(subm);
+        double d = det(subm);
 
-        result += coeff * matrix.data[0][i] * det(subm);
+        result += coeff * matrix.data[i][0] * d;
+        free(subm.data);
+
         coeff *= -1;
     }
 
@@ -87,12 +75,10 @@ int main()
     double m[9] = {3, 5, 1,
                    1, 4, 2,
                    7, 1, 9};
-    printf("i am here\n");
     struct Matrix mat = {.n = 3};
     mat.data = malloc(sizeof(double*) * mat.n);
 
     to_matrix(&mat, m);
-    print(mat);
     printf("det = %lf", det(mat));
 
     return 0;
