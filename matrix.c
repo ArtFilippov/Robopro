@@ -3,14 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void to_matrix(struct Matrix new_matrix, double *matrix)
+void to_matrix(struct Matrix *new_matrix, double *matrix)
 {
-    for (int i = 0; i < new_matrix.n; ++i)
+    for (int i = 0; i < new_matrix->n; ++i)
     {
-        new_matrix.data[i] = matrix + i * new_matrix.n;
+        new_matrix->data[i] = matrix + i * new_matrix->n;
     }
-
-    return new_matrix;
 }
 
 struct Matrix submatrix(const struct Matrix matrix, int *rows, int n)
@@ -84,7 +82,7 @@ int main()
     struct Matrix mat = {.n = 3};
     mat.data = malloc(sizeof(double*) * mat.n);
 
-    to_matrix(mat, m);
+    to_matrix(&mat, m);
     print(mat);
     //printf("det = %lf", det(mat));
 

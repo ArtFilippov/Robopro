@@ -4,7 +4,7 @@ struct Matrix
     int n;
 };
 
-struct Matrix to_matrix(double *matrix, int n);
+void to_matrix(struct Matrix *new_matrix, double *matrix);
 
 double det(const struct Matrix matrix);
 
