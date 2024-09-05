@@ -3,7 +3,8 @@
 struct Matrix to_matrix(double *matrix, int n)
 {
     struct Matrix new_matrix = {.n = n};
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         new_matrix.data[i] = matrix + i * n;
     }
 
@@ -13,7 +14,14 @@ struct Matrix to_matrix(double *matrix, int n)
 struct Matrix submatrix(struct Matrix matrix, int *rows, int n)
 {
     struct Matrix new_matrix = {.n = n};
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         new_matrix.data[i] = matrix.data[rows[i]] + matrix.n - n;
     }
+
+    return new_matrix;
+}
+
+double det(struct Matrix matrix)
+{
 }

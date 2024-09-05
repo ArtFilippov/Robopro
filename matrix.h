@@ -1,6 +1,6 @@
 struct Matrix
 {
-    double **m;
+    double **data;
     int n;
 };
 
