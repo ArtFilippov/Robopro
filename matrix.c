@@ -16,7 +16,7 @@ struct Matrix submatrix(const struct Matrix matrix, int *rows, int n)
     struct Matrix new_matrix = {.n = n};
     for (int i = 0; i < n; ++i)
     {
-        new_matrix.data[i] = matrix.data[rows[i]] + matrix.n - n;
+        new_matrix.data[i] = matrix.data[rows[i]] + (matrix.n - n);
     }
 
     return new_matrix;
@@ -24,6 +24,7 @@ struct Matrix submatrix(const struct Matrix matrix, int *rows, int n)
 
 void print(struct Matrix matrix)
 {
+    printf("%d\n", matrix.n);
     for (int i = 0; i < matrix.n; ++i) {
         for (int j = 0; j < matrix.n; ++j) {
             printf("%lf ", matrix.data[i][j]);
@@ -62,8 +63,12 @@ double det(const struct Matrix matrix)
                 rows[j - 1] = j;
             }
         }
-
+                
+        for (int k = 0; k < matrix.n - 1; ++k) {
+            printf("%d ", rows[k]);
+        }
         struct Matrix subm = submatrix(matrix, rows, matrix.n - 1);
+
         free(rows);
 
         print(subm);
