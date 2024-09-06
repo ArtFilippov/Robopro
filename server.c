@@ -60,7 +60,7 @@ void client_handler(struct Server *server)
 {
     while (1)
     {
-        char *r_buf[MATRIX_SIZE];
+        char r_buf[MATRIX_SIZE];
         int received = recvall(server->socket, r_buf, MATRIX_SIZE, 0);
         if (received < 0)
         {
@@ -85,10 +85,9 @@ void client_handler(struct Server *server)
             server->matrices += 1;
         }
 
-        char *s_buf[MAX_RESPONSE];
+        char s_buf[MAX_RESPONSE];
         int msg_size = form_response(server, s_buf, MAX_RESPONSE);
-        int sent = sendall(server->socket, s_buf, MAX_RESPONSE, 0);
-        if (sent < 0)
+        if (sendall(server->socket, s_buf, MAX_RESPONSE, 0) < 0)
         {
             fprintf(stderr, "bed send\n");
             exit(1);
