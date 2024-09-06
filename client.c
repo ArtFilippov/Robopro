@@ -28,6 +28,7 @@ void show_matrix(double *matrix, int n)
 
 void run(int sock)
 {
+    printf("Press Enter to continue: ");
     while (getchar() == '\n')
     {
         double matrix[N * N];
