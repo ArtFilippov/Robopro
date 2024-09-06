@@ -53,7 +53,7 @@ double det(const struct Matrix matrix)
         struct Matrix subm;
         subm.n = matrix.n - 1;
         subm.data = (double **)malloc(sizeof(double **) * subm.n);
-        if (!subm.data) 
+        if (!subm.data)
         {
             fprintf(stderr, "bed alloc\n");
             exit(1);

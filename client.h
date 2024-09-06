@@ -12,4 +12,4 @@ enum
 void run(int sock);
 void get_matrix(double *matrix, int n);
 
-#endif //CLIENT_H
+#endif // CLIENT_H
