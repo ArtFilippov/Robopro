@@ -31,7 +31,7 @@ void run_by_key(int sock)
 
         show_matrix(matrix, N);
 
-        if (sendall(sock, matrix, MATRIX_SIZE, 0) <= 0)
+        if (sendall(sock, (char *)matrix, MATRIX_SIZE, 0) <= 0)
         {
             fprintf(stderr, "bed send\n");
             exit(1);
