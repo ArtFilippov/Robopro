@@ -7,7 +7,6 @@
 
 void get_matrix(double *matrix, int n)
 {
-    srand(time(NULL));
     for (int i = 0; i < n * n; ++i)
     {
         int sign = -1 + 2 * (rand() % 2);
