@@ -11,7 +11,6 @@ CMakeFiles/client.dir/client.c.o: /home/user/Robopro/client.c \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
-  /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
@@ -29,7 +28,6 @@ CMakeFiles/client.dir/client.c.o: /home/user/Robopro/client.c \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -37,19 +35,15 @@ CMakeFiles/client.dir/client.c.o: /home/user/Robopro/client.c \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -240,31 +234,29 @@ CMakeFiles/client.dir/send_recv.c.o: /home/user/Robopro/send_recv.c \
 
 /usr/include/asm-generic/sockios.h:
 
-/home/user/Robopro/client_main.c:
+/usr/include/alloca.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/lib/linux/uapi/x86/asm/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
@@ -272,35 +264,15 @@ CMakeFiles/client.dir/send_recv.c.o: /home/user/Robopro/send_recv.c \
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
 /usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /home/user/Robopro/client.h:
 
 /home/user/Robopro/client.c:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/lib/linux/uapi/x86/asm/posix_types.h:
-
-/usr/include/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/alloca.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/time.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /home/user/Robopro/send_recv.h:
 
@@ -310,9 +282,13 @@ CMakeFiles/client.dir/send_recv.c.o: /home/user/Robopro/send_recv.c \
 
 /usr/include/features.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/asm-generic/socket.h:
 
@@ -321,8 +297,6 @@ CMakeFiles/client.dir/send_recv.c.o: /home/user/Robopro/send_recv.c \
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
@@ -348,15 +322,11 @@ CMakeFiles/client.dir/send_recv.c.o: /home/user/Robopro/send_recv.c \
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/stdio.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -386,6 +356,18 @@ CMakeFiles/client.dir/send_recv.c.o: /home/user/Robopro/send_recv.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
 /usr/lib/linux/uapi/x86/asm/sockios.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/home/user/Robopro/client_main.c:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/asm-generic/bitsperlong.h:

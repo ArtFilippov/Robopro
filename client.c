@@ -23,6 +23,7 @@ void show_matrix(double *matrix, int n)
         }
         printf("\n");
     }
+    printf("\n");
 }
 
 void run(int sock)
@@ -32,6 +33,7 @@ void run(int sock)
         double matrix[N * N];
         get_matrix(matrix, N);
 
+        printf("send matrix:\n");
         show_matrix(matrix, N);
 
         if (sendall(sock, (char *)matrix, MATRIX_SIZE, 0) <= 0)
@@ -39,14 +41,5 @@ void run(int sock)
             fprintf(stderr, "bed send\n");
             exit(1);
         }
-
-        char r_buf[MAX_RESPONSE];
-        if (recvall(sock, r_buf, MAX_RESPONSE, 0) <= 0)
-        {
-            fprintf(stderr, "bed recv\n");
-            exit(1);
-        }
-
-        printf("%s\n", r_buf);
     }
 }

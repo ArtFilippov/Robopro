@@ -2,9 +2,11 @@
 #include "send_recv.h"
 #include "matrix.h"
 
-#include <stdio.h>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int form_response(struct Server *server, char *buff, int max_len)
 {
@@ -23,7 +25,7 @@ int form_response(struct Server *server, char *buff, int max_len)
     }
     else
     {
-        n = snprintf(buff, max_len, "Det. = %.4lf\nAvg. det = N/A\nDel. det = N/A", d);
+        n = snprintf(buff, max_len, "Det. = %.4lf\nAvg. det = N/A\nDel. det = N/A\n", d);
     }
 
     return n;
@@ -95,11 +97,7 @@ void client_handler(struct Server *server)
         }
 
         char s_buf[MAX_RESPONSE];
-        int msg_size = form_response(server, s_buf, MAX_RESPONSE);
-        if (sendall(server->socket, s_buf, MAX_RESPONSE, 0) < 0)
-        {
-            fprintf(stderr, "bed send\n");
-            exit(1);
-        }
+        form_response(server, s_buf, MAX_RESPONSE);
+        printf("%s\n", s_buf);
     }
 }
