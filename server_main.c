@@ -14,19 +14,19 @@ int main()
     server.socket  = socket(AF_INET, SOCK_STREAM, 0);
     if (server.socket < 0) 
     {
-        fprintf(stderr, "bed socket");
+        fprintf(stderr, "bed socket\n");
         exit(1);
     }
 
-    struct sockaddr_in addr = {.sin_family = AF_INET, .sin_port = htons(3456), .sin_addr.s_addr = htonl(INADDR_ANY)};
+    struct sockaddr_in addr = {.sin_family = AF_INET, .sin_port = htons(8000), .sin_addr.s_addr = htonl(INADDR_ANY)};
 
     if (bind(server.socket, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-        fprintf(stderr, "bed bind");
+        fprintf(stderr, "bed bind\n");
         exit(1);
     }
 
     if (listen(server.socket, 1) < 0) {
-        fprintf(stderr, "bed listen");
+        fprintf(stderr, "bed listen\n");
         exit(1);
     }
 

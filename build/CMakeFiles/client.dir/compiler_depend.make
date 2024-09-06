@@ -74,6 +74,7 @@ CMakeFiles/client.dir/client.c.o: /home/user/Robopro/client.c \
 
 CMakeFiles/client.dir/client_main.c.o: /home/user/Robopro/client_main.c \
   /home/user/Robopro/client.h \
+  /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
@@ -86,6 +87,7 @@ CMakeFiles/client.dir/client_main.c.o: /home/user/Robopro/client_main.c \
   /usr/include/netinet/in.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
@@ -110,6 +112,7 @@ CMakeFiles/client.dir/client_main.c.o: /home/user/Robopro/client_main.c \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
@@ -136,6 +139,8 @@ CMakeFiles/client.dir/client_main.c.o: /home/user/Robopro/client_main.c \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \

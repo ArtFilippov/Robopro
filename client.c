@@ -10,7 +10,8 @@ void get_matrix(double *matrix, int n)
     srand(time(NULL));
     for (int i = 0; i < n * n; ++i)
     {
-        matrix[i] = -MAX_INT_PART + 2 * (rand() % MAX_INT_PART) + (double)rand() / RAND_MAX;
+        int sign = -1 + 2 * (rand() % 2);
+        matrix[i] = sign * ((double)rand() / RAND_MAX) * MAX_INT_PART;
     }
 }
 
@@ -20,7 +21,7 @@ void show_matrix(double *matrix, int n)
     {
         for (int j = 0; j < n; ++j)
         {
-            printf("%lf ", matrix[i * n + j]);
+            printf("%8.4lf ", matrix[i * n + j]);
         }
         printf("\n");
     }

@@ -8,7 +8,7 @@ enum
     N = 6,
     MATRIX_SIZE = sizeof(double) * N * N,
     MAX_RESPONSE = 256,
-    MAX_INT_PART = 100
+    MAX_INT_PART = 10
 };
 
 void run_by_timer(int sock, unsigned time);
