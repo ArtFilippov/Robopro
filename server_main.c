@@ -4,12 +4,15 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 
 int main()
 {
     struct Server server = {.cyclic_i = 0, .matrices = 0};
-    if (server.socket  = socket(AF_INET, SOCK_STREAM, 0) < 0) 
+    server.socket  = socket(AF_INET, SOCK_STREAM, 0);
+    if (server.socket < 0) 
     {
         fprintf(stderr, "bed socket");
         exit(1);

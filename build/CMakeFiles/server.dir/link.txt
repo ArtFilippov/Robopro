@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/server.dir/server_main.c.o CMakeFiles/server.dir/server.c.o CMakeFiles/server.dir/matrix.c.o CMakeFiles/server.dir/send_recv.c.o -o server
