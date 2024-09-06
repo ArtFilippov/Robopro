@@ -18,7 +18,7 @@ int main()
         exit(1);
     }
 
-    struct sockaddr_in addr = {.sin_family = AF_INET, .sin_port = 0, .sin_addr.s_addr = htonl(INADDR_ANY)};
+    struct sockaddr_in addr = {.sin_family = AF_INET, .sin_port = htons(3456), .sin_addr.s_addr = htonl(INADDR_ANY)};
 
     if (bind(server.socket, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
         fprintf(stderr, "bed bind");
