@@ -13,7 +13,7 @@ struct Server
 {
     int socket;
     double dets[NUMBER_OF_MATRICES];
-    short cyclic_i; // указывает на самую старую запись в det
+    short cyclic_i; // указывает на самую старую запись в dets
     short matrices;
 };
 
