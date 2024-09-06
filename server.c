@@ -66,22 +66,31 @@ void client_handler(struct Server *server)
         {
             fprintf(stderr, "bed recv\n");
             exit(1);
-        } else if (received == 0) {
+        }
+        else if (received == 0)
+        {
             printf("disconnected\n");
             return;
         }
 
         struct Matrix m;
         m.data = (double **)malloc(sizeof(double **) * N);
+        if (!m.data)
+        {
+            fprintf(stderr, "bed alloc\n");
+            exit(1);
+        }
+
         m.n = N;
         to_matrix(&m, (double *)r_buf);
-        
+
         double d = det(m);
         free(m.data);
 
         server->dets[server->cyclic_i] = d;
         server->cyclic_i = (server->cyclic_i + 1) % NUMBER_OF_MATRICES;
-        if (server->matrices < NUMBER_OF_MATRICES) {
+        if (server->matrices < NUMBER_OF_MATRICES)
+        {
             server->matrices += 1;
         }
 

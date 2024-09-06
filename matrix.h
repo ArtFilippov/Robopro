@@ -13,4 +13,4 @@ double det(const struct Matrix matrix);
 
 void submatrix(struct Matrix *new_matrix, struct Matrix matrix, int *rows);
 
-#endif //MATRIX_H
+#endif // MATRIX_H

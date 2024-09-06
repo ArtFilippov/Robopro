@@ -21,4 +21,4 @@ void run(struct Server *server);
 int form_response(struct Server *server, char *buff, int max_len);
 void client_handler(struct Server *server);
 
-#endif //SERVER_H
+#endif // SERVER_H
