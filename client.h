@@ -1,8 +1,6 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <unistd.h>
-
 enum
 {
     N = 6,
@@ -11,8 +9,7 @@ enum
     MAX_INT_PART = 10
 };
 
-void run_by_timer(int sock, unsigned time);
-void run_by_key(int sock);
+void run(int sock);
 void get_matrix(double *matrix, int n);
 
 #endif //CLIENT_H

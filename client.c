@@ -27,7 +27,7 @@ void show_matrix(double *matrix, int n)
     }
 }
 
-void run_by_key(int sock)
+void run(int sock)
 {
     while (getchar() == '\n')
     {
