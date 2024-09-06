@@ -4,4 +4,4 @@
 int sendall(int s, char *buf, int len, int flags);
 int recvall(int s, char *buf, int len, int flags);
 
-#endif //SEND_RECV_H
+#endif // SEND_RECV_H
