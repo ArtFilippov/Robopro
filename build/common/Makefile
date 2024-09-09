@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles /home/user/Robopro/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/user/Robopro/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles /home/user/Robopro/build/common//CMakeFiles/progress.marks
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,57 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/user/Robopro/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Client
+# Convenience name for target.
+common/CMakeFiles/SendRecv.dir/rule:
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/CMakeFiles/SendRecv.dir/rule
+.PHONY : common/CMakeFiles/SendRecv.dir/rule
 
-# Build rule for target.
-Client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Client
-.PHONY : Client
-
-# fast build rule for target.
-Client/fast:
-	$(MAKE) $(MAKESILENT) -f client/CMakeFiles/Client.dir/build.make client/CMakeFiles/Client.dir/build
-.PHONY : Client/fast
-
-#=============================================================================
-# Target rules for targets named Server
-
-# Build rule for target.
-Server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server
-.PHONY : Server
-
-# fast build rule for target.
-Server/fast:
-	$(MAKE) $(MAKESILENT) -f server/CMakeFiles/Server.dir/build.make server/CMakeFiles/Server.dir/build
-.PHONY : Server/fast
-
-#=============================================================================
-# Target rules for targets named SendRecv
-
-# Build rule for target.
-SendRecv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SendRecv
+# Convenience name for target.
+SendRecv: common/CMakeFiles/SendRecv.dir/rule
 .PHONY : SendRecv
 
 # fast build rule for target.
 SendRecv/fast:
-	$(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/build
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/build
 .PHONY : SendRecv/fast
+
+send_recv.o: send_recv.c.o
+.PHONY : send_recv.o
+
+# target to build an object file
+send_recv.c.o:
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/send_recv.c.o
+.PHONY : send_recv.c.o
+
+send_recv.i: send_recv.c.i
+.PHONY : send_recv.i
+
+# target to preprocess a source file
+send_recv.c.i:
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/send_recv.c.i
+.PHONY : send_recv.c.i
+
+send_recv.s: send_recv.c.s
+.PHONY : send_recv.s
+
+# target to generate assembly for a file
+send_recv.c.s:
+	cd /home/user/Robopro/build && $(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/send_recv.c.s
+.PHONY : send_recv.c.s
 
 # Help Target
 help:
@@ -163,9 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Client"
 	@echo "... SendRecv"
-	@echo "... Server"
+	@echo "... send_recv.o"
+	@echo "... send_recv.i"
+	@echo "... send_recv.s"
 .PHONY : help
 
 
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/user/Robopro/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

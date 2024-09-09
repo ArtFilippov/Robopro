@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/Client.dir/client_main.c.o CMakeFiles/Client.dir/client.c.o -o Client  ../common/libSendRecv.a

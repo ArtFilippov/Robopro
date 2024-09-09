@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/client.dir/client_main.c.o CMakeFiles/client.dir/client.c.o CMakeFiles/client.dir/send_recv.c.o -o client
