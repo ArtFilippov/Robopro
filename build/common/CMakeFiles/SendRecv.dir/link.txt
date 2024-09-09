@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSendRecv.a CMakeFiles/SendRecv.dir/send_recv.c.o
-/usr/bin/ranlib libSendRecv.a
