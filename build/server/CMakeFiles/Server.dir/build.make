@@ -109,6 +109,7 @@ server/Server: server/CMakeFiles/Server.dir/server_main.c.o
 server/Server: server/CMakeFiles/Server.dir/server.c.o
 server/Server: server/CMakeFiles/Server.dir/build.make
 server/Server: common/libSendRecv.a
+server/Server: matrix/libMatrix.a
 server/Server: server/CMakeFiles/Server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/user/Robopro/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Server"
 	cd /home/user/Robopro/build/server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Server.dir/link.txt --verbose=$(VERBOSE)

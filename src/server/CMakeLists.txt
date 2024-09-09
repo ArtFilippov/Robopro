@@ -10,5 +10,6 @@ add_executable(Server ${SERVER_SRC})
 include_directories(../common)
 include_directories(../matrix)
 
-target_link_libraries(Server Matrix SendRecv)
+target_link_libraries(Server SendRecv)
+target_link_libraries(Server Matrix)
 

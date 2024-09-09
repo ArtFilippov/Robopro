@@ -1,13 +1,11 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-enum
-{
-    NUMBER_OF_MATRICES = 5,
-    N = 6,
-    MATRIX_SIZE = sizeof(double) * N * N,
-    MAX_RESPONSE = 256
-};
+const int NUMBER_OF_MATRICES = 5;
+const int N = 6;
+const int MATRIX_SIZE = sizeof(double) * N * N;
+const int MAX_RESPONSE = 256;
+
 
 struct Server
 {

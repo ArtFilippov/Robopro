@@ -66,18 +66,21 @@ CMAKE_BINARY_DIR = /home/user/Robopro/build
 all: client/all
 all: server/all
 all: common/all
+all: matrix/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: client/preinstall
 preinstall: server/preinstall
 preinstall: common/preinstall
+preinstall: matrix/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: client/clean
 clean: server/clean
 clean: common/clean
+clean: matrix/clean
 .PHONY : clean
 
 #=============================================================================
@@ -109,6 +112,21 @@ common/preinstall:
 # Recursive "clean" directory target.
 common/clean: common/CMakeFiles/SendRecv.dir/clean
 .PHONY : common/clean
+
+#=============================================================================
+# Directory level rules for directory matrix
+
+# Recursive "all" directory target.
+matrix/all: matrix/CMakeFiles/Matrix.dir/all
+.PHONY : matrix/all
+
+# Recursive "preinstall" directory target.
+matrix/preinstall:
+.PHONY : matrix/preinstall
+
+# Recursive "clean" directory target.
+matrix/clean: matrix/CMakeFiles/Matrix.dir/clean
+.PHONY : matrix/clean
 
 #=============================================================================
 # Directory level rules for directory server
@@ -156,14 +174,15 @@ client/CMakeFiles/Client.dir/clean:
 
 # All Build rule for target.
 server/CMakeFiles/Server.dir/all: common/CMakeFiles/SendRecv.dir/all
+server/CMakeFiles/Server.dir/all: matrix/CMakeFiles/Matrix.dir/all
 	$(MAKE) $(MAKESILENT) -f server/CMakeFiles/Server.dir/build.make server/CMakeFiles/Server.dir/depend
 	$(MAKE) $(MAKESILENT) -f server/CMakeFiles/Server.dir/build.make server/CMakeFiles/Server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/Robopro/build/CMakeFiles --progress-num=6,7,8 "Built target Server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/Robopro/build/CMakeFiles --progress-num=8,9,10 "Built target Server"
 .PHONY : server/CMakeFiles/Server.dir/all
 
 # Build rule for subdir invocation for target.
 server/CMakeFiles/Server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server/CMakeFiles/Server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles 0
 .PHONY : server/CMakeFiles/Server.dir/rule
@@ -184,7 +203,7 @@ server/CMakeFiles/Server.dir/clean:
 common/CMakeFiles/SendRecv.dir/all:
 	$(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/depend
 	$(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/Robopro/build/CMakeFiles --progress-num=4,5 "Built target SendRecv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/Robopro/build/CMakeFiles --progress-num=6,7 "Built target SendRecv"
 .PHONY : common/CMakeFiles/SendRecv.dir/all
 
 # Build rule for subdir invocation for target.
@@ -202,6 +221,32 @@ SendRecv: common/CMakeFiles/SendRecv.dir/rule
 common/CMakeFiles/SendRecv.dir/clean:
 	$(MAKE) $(MAKESILENT) -f common/CMakeFiles/SendRecv.dir/build.make common/CMakeFiles/SendRecv.dir/clean
 .PHONY : common/CMakeFiles/SendRecv.dir/clean
+
+#=============================================================================
+# Target rules for target matrix/CMakeFiles/Matrix.dir
+
+# All Build rule for target.
+matrix/CMakeFiles/Matrix.dir/all:
+	$(MAKE) $(MAKESILENT) -f matrix/CMakeFiles/Matrix.dir/build.make matrix/CMakeFiles/Matrix.dir/depend
+	$(MAKE) $(MAKESILENT) -f matrix/CMakeFiles/Matrix.dir/build.make matrix/CMakeFiles/Matrix.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/Robopro/build/CMakeFiles --progress-num=4,5 "Built target Matrix"
+.PHONY : matrix/CMakeFiles/Matrix.dir/all
+
+# Build rule for subdir invocation for target.
+matrix/CMakeFiles/Matrix.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 matrix/CMakeFiles/Matrix.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Robopro/build/CMakeFiles 0
+.PHONY : matrix/CMakeFiles/Matrix.dir/rule
+
+# Convenience name for target.
+Matrix: matrix/CMakeFiles/Matrix.dir/rule
+.PHONY : Matrix
+
+# clean rule for target.
+matrix/CMakeFiles/Matrix.dir/clean:
+	$(MAKE) $(MAKESILENT) -f matrix/CMakeFiles/Matrix.dir/build.make matrix/CMakeFiles/Matrix.dir/clean
+.PHONY : matrix/CMakeFiles/Matrix.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

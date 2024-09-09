@@ -9,3 +9,6 @@
 /home/user/Robopro/build/common/CMakeFiles/SendRecv.dir
 /home/user/Robopro/build/common/CMakeFiles/edit_cache.dir
 /home/user/Robopro/build/common/CMakeFiles/rebuild_cache.dir
+/home/user/Robopro/build/matrix/CMakeFiles/Matrix.dir
+/home/user/Robopro/build/matrix/CMakeFiles/edit_cache.dir
+/home/user/Robopro/build/matrix/CMakeFiles/rebuild_cache.dir
