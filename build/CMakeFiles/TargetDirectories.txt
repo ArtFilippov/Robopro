@@ -1,4 +1,0 @@
-/home/user/Robopro/build/CMakeFiles/client.dir
-/home/user/Robopro/build/CMakeFiles/server.dir
-/home/user/Robopro/build/CMakeFiles/edit_cache.dir
-/home/user/Robopro/build/CMakeFiles/rebuild_cache.dir
